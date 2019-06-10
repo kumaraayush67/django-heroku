@@ -19,6 +19,12 @@
   - cd project_name
   - python manage.py runserver
   
+  To stop server
+  - Ctrl + C
+  
+  To migrate
+  - python manage.py migrate
+  
  ## Start App
   - python manage.py startapp app_name
   - Add app in settings.py file under INSTALLED_APPS
