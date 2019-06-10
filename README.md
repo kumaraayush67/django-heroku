@@ -18,3 +18,7 @@
   - django-admin startproject project_name
   - cd project_name
   - python manage.py runserver
+  
+ ## Start App
+  - python manage.py startapp app_name
+  - Add app in settings.py file under INSTALLED_APPS
