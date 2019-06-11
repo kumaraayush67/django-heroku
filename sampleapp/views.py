@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Todo
 
@@ -7,7 +7,7 @@ def index(request):
         return redirect('home1')
     return render(request, 'index.html')
 
-def home(request, id=None):
+def home(request):
     if request.method == 'POST':
         title = request.POST['title']
         des = request.POST['des']
@@ -17,6 +17,10 @@ def home(request, id=None):
     todoList = Todo.objects.all()
     return render(request, 'home.html', {'todoList': todoList})
 
-
-def base(request):
-    return render(request, 'todos.html')
+def detail(request, id):
+    try: 
+        todo = Todo.objects.get(id=id)
+    except Todo.DoesNotExist:
+        return redirect('home')
+    # todo = get_object_or_404(Todo, id=id)
+    return render(request, 'home.html', {'todo': todo})

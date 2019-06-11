@@ -13,17 +13,16 @@ Home|AyDEV
     </form>
     <h1>Todo's</h1>
 
-    <div class='todo'>
-        <div class="title">{{todo.title}}</div>
-        <div class="des">{{todo.des}}</div>
-    </div>
-    
     {% for todo in todoList %}
     <div class='todo'>
+        <a href="{% url 'detail' todo.id %}"><div class="title">{{todo.title}}</div></a>
+        <div class="des">{{todo.des}}</div>
+    </div>
+    {% endfor %}
+
+    <div class='todo'>
         <div class="title">{{todo.title}}</div>
         <div class="des">{{todo.des}}</div>
     </div>
-    <p></p>
-    {% endfor %}
     
 {% endblock %}
