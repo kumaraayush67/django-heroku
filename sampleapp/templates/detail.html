@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block 'title' %}
+Home|AyDEV
+{% endblock %}
+
+{% block 'body' %}
+    <form method="POST">
+        {% csrf_token %}
+        <input type='text' name='title' placeholder="title" value='{{todo.title}}'>
+        <textarea name='des'>{{todo.des}}</textarea>
+        <input type="submit">
+    </form>
+    <div class='todo'>
+        <div class="title">{{todo.title}}</div>
+        <div class="des">{{todo.des}}</div>
+    </div>
+    
+{% endblock %}
