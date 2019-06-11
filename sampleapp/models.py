@@ -10,3 +10,7 @@ class Todo(models.Model):
             return self.title + "(completed)"
         else:
             return self.title
+
+    def save(self, *args, **kwargs):
+        super(Todo, self).save(*args, **kwargs)
+        return self
