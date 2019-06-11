@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {% block 'title' %}
+            AyDEV
+            {% endblock %}
+        </title>
+
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/abc1.css' %}">
+    </head>
+    <body> 
+        <header>ABC</header>
+        <div class="sidebar">+</div>
+        {% block 'body' %}
+        
+        title ansadsad
+        
+        {% endblock %}
+    </body>
+</html>

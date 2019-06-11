@@ -1,19 +1,24 @@
-<!DOCTYPE html>
-<html>
-    <head><title>AyDEV</title></head>
-    <body>
+{% extends 'base.html' %}
 
-        <h2>Hello
-            {% if name %} 
-            {{ name }}
-            {% else %}
-            Your Name Here
-            {% endif %}
-        </h2>
-        <form method="POST">
-            {% csrf_token %}
-            <input type='text' name='name'>
-            <input type="submit">
-        </form>
-    </body>
-</html>
+{% block 'title' %}
+Home|AyDEV
+{% endblock %}
+
+{% block 'body' %}
+    Method : {{ method }}<br>
+    URL : {{ id }}
+    <h4>Hello
+        {% if name %} 
+        {{ name }}
+        {% else %}
+        Your Name Here
+        {% endif %}
+    </h4>
+    <form method="POST">
+        {% csrf_token %}
+        <input type='text' name='name'>
+        <input type="submit">
+    </form>
+    <a href="{% url 'home' method %}">Index</a>
+    <p>hsiudisad</p>
+{% endblock %}

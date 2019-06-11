@@ -1,13 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse('<h1>Hello, World!</h1>')
-
-def home(request, id):
     if request.method == 'POST':
-        context = {
-            'name': request.POST['name']
-        }
-        return render(request, 'home.html', context)
-    return render(request, 'home.html')
+        return redirect('home1')
+    return render(request, 'index.html')
+
+def home(request, id=None):
+    if request.method == 'POST':
+        return render(request, 'home.html', {'method': "POST"})
+    return render(request, 'home.html', {'method': "GET", "id": id})
+
+
+def base(request):
+    return render(request, 'base.html')
