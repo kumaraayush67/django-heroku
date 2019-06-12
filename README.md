@@ -29,6 +29,12 @@
   - python manage.py startapp app_name
   - Add app in settings.py file under INSTALLED_APPS
   
+ ## Media files
+ 
+  - When dealing with media files copy and paste following code at the bottom of your applications
+   
+    
+  
   
   ## Deployment on heroku
    - Install heroku on System
