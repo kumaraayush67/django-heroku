@@ -105,5 +105,9 @@
      heroku buildpacks:set heroku/python
      
      heroku buildpacks:set https://github.com/heroku/heroku-buildpack-python.git
+     
+   - To create an SSH connection to server
+    
+    heroku run bash
     
     
