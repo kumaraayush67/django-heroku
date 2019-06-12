@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block 'title' %}
+Home|{{person.name}}
+{% endblock %}
+
+{% block 'body' %}
+    <h1 style="text-align: center">{{person.name}}</h1>
+    <div class='todo'>
+        <div class="title">{{person.todo.title}}</div>
+        <div class="des">{{person.todo.des}}</div>
+    </div>
+    
+{% endblock %}

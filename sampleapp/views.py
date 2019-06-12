@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
-from .models import Todo
+from .models import Todo, assignee
 
 def index(request):
     if request.method == 'POST':
@@ -42,3 +42,7 @@ def detail(request, id):
     
     # render the template with the object having given id
     return render(request, 'detail.html', {'todo': todo})
+
+def profile(request, id):
+    person = get_object_or_404(assignee, id=id)
+    return render(request, 'profile.html', {'person': person})

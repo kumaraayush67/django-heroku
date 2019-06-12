@@ -14,3 +14,10 @@ class Todo(models.Model):
     def save(self, *args, **kwargs):
         super(Todo, self).save(*args, **kwargs)
         return self
+
+class assignee(models.Model):
+    name = models.CharField(max_length=20)
+    todo = models.ForeignKey('Todo', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
