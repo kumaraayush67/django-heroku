@@ -64,7 +64,7 @@
    
    - import django_heroku in settings.py file
    
-   - at bottom of settings file add 
+   - at bottom of settings.py file add 
    
     django_heroku.settings(locals())
    
