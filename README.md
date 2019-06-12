@@ -31,7 +31,7 @@
   
  ## Media files
  
-  - When dealing with media files copy and paste following code at the bottom of your application
+  - When dealing with media files copy and paste following code at the bottom of your settings.py
    
     STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
