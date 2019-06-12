@@ -100,4 +100,10 @@
    
     git push heroku master
     
+   - Built Pack / default language error
+   
+     heroku buildpacks:set heroku/python
+     
+     heroku buildpacks:set https://github.com/heroku/heroku-buildpack-python.git
+    
     
