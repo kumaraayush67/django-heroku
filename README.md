@@ -56,11 +56,11 @@
   ## Deployment on heroku
    - Install heroku on System
    
-   - Install heroku-django
+   - Install django-heroku
    
-    pip install heroku-django
+    pip install django-heroku
    
-   - import heroku-django in settings.py file
+   - import django_heroku in settings.py file
    
    - at bottom of settings file add 
    
