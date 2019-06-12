@@ -90,7 +90,11 @@
    
     heroku create *app_name*
     
-   - Add heroku path to git remote. can confirm it using git remote -v
+   - Add heroku path to git remote.
+   
+    heroku git:remote -a *app_name*
+   
+   - can confirm it using git remote -v
    
    - To Push all the files run
    
