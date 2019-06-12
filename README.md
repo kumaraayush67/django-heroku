@@ -36,7 +36,16 @@
     STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+    
     MEDIA_URL = '/media/'
+    
+   - To make media files available to access on a local system. Add following at the bottom of the urls.py
+   
+    if settings.DEBUG:
+   
+     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
+     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     
   
   ## Deployment on heroku
