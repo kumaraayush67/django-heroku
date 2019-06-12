@@ -81,6 +81,10 @@
    - After creating the file write the following:
    
     web: gunicorn project_name.wsgi
+    
+   - Login to Heroku. On terminal write
+   
+    heroku login
 
    - Create Heroku Application
    
