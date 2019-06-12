@@ -56,6 +56,8 @@
   ## Deployment on heroku
    - Install heroku on System
    
+     https://devcenter.heroku.com/articles/heroku-cli
+   
    - Install django-heroku
    
     pip install django-heroku
