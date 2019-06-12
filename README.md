@@ -31,10 +31,13 @@
   
  ## Media files
  
-  - When dealing with media files copy and paste following code at the bottom of your applications
+  - When dealing with media files copy and paste following code at the bottom of your application
    
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+    MEDIA_URL = '/media/'
     
-  
   
   ## Deployment on heroku
    - Install heroku on System
