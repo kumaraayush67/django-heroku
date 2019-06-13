@@ -46,3 +46,27 @@ def detail(request, id):
 def profile(request, id):
     person = get_object_or_404(assignee, id=id)
     return render(request, 'sampleapp/profile.html', {'person': person})
+
+def mlrocks(request):
+    if request.method == 'POST':
+        input_list = list()
+        age = int(request.POST['age'])
+        estimate = int(request.POST['est'])
+        input_list.append([age,estimate])
+        print(input_list)
+        print(static('css/abc1.css'))
+        model = joblib.load('sampleapp/static/objects/classifier.yml')
+        sc = joblib.load('sampleapp/static/objects/sc.yml')
+
+        x = input_list
+
+        X_test = sc.transform(x)
+
+        predict = model.predict(X_test)
+        if predict[0] == 0:
+        out = "Not Purchased"
+        else:
+        out = "Purchased"
+        return render(request, 'sampleapp/ml.html', {'out': out})
+
+    return render(request, 'sampleapp/ml.html')
