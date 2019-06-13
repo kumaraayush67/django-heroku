@@ -110,4 +110,16 @@
     
     heroku run bash
     
+   ## Serialization ML models/ python objects
+   
+   - import joblib using
     
+    from sklearn.externals import joblib
+    
+   - To create file
+   
+    joblib.dump(model, "file_name")
+    
+   - To load the model 
+   
+    model = joblib.load("file_name")
