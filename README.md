@@ -31,7 +31,7 @@
   
  ## Media files
  
-  - When dealing with media files copy and paste following code at the bottom of your application
+  - When dealing with media files copy and paste following code at the bottom of your settings.py
    
     STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
@@ -46,18 +46,25 @@
      urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     
      urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+     
+   - Also add import statements in urls.py file
+   
+    from django.conf import settings
+    from django.conf.urls.static import static
     
   
   ## Deployment on heroku
    - Install heroku on System
    
-   - Install heroku-django
+     https://devcenter.heroku.com/articles/heroku-cli
    
-    pip install heroku-django
+   - Install django-heroku
    
-   - import heroku-django in settings.py file
+    pip install django-heroku
    
-   - at bottom of settings file add 
+   - import django_heroku in settings.py file
+   
+   - at bottom of settings.py file add 
    
     django_heroku.settings(locals())
    
@@ -74,15 +81,33 @@
    - After creating the file write the following:
    
     web: gunicorn project_name.wsgi
+    
+   - Login to Heroku. On terminal write
+   
+    heroku login
 
    - Create Heroku Application
    
     heroku create *app_name*
     
-   - Add heroku path to git remote. can confirm it using git remote -v
+   - Add heroku path to git remote.
+   
+    heroku git:remote -a *app_name*
+   
+   - can confirm it using git remote -v
    
    - To Push all the files run
    
     git push heroku master
+    
+   - Built Pack / default language error
+   
+     heroku buildpacks:set heroku/python
+     
+     heroku buildpacks:set https://github.com/heroku/heroku-buildpack-python.git
+     
+   - To create an SSH connection to server
+    
+    heroku run bash
     
     
