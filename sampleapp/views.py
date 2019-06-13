@@ -4,8 +4,8 @@ from .models import Todo, assignee
 
 def index(request):
     if request.method == 'POST':
-        return redirect('home1')
-    return render(request, 'index.html')
+        return redirect('sampleapp:home')
+    return render(request, 'sampleapp/index.html')
 
 def home(request):
     # to check method of request GET or POST
@@ -18,11 +18,11 @@ def home(request):
         todo = Todo(title=title,des=des).save()
 
         # rendering the template with the todo value
-        return render(request, 'home.html', {'todo': todo})      
+        return render(request, 'sampleapp/home.html', {'todo': todo})      
 
     # List of all the objects present in Database
     todoList = Todo.objects.all()
-    return render(request, 'home.html', {'todoList': todoList})
+    return render(request, 'sampleapp/home.html', {'todoList': todoList})
 
 def detail(request, id):
     # Try to fetch the object with given id
@@ -30,7 +30,7 @@ def detail(request, id):
         todo = Todo.objects.get(id=id)
     except Todo.DoesNotExist:
         # if object not found redirect to home page
-        return redirect('home')
+        return redirect('sampleapp:home')
 
     # Check if the request method is get or post
     if request.method == 'POST':
@@ -41,8 +41,8 @@ def detail(request, id):
         todo.save()   
     
     # render the template with the object having given id
-    return render(request, 'detail.html', {'todo': todo})
+    return render(request, 'sampleapp/detail.html', {'todo': todo})
 
 def profile(request, id):
     person = get_object_or_404(assignee, id=id)
-    return render(request, 'profile.html', {'person': person})
+    return render(request, 'sampleapp/profile.html', {'person': person})

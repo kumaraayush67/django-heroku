@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'sampleapp/base.html' %}
 
 {% block 'title' %}
 Home|AyDEV
@@ -15,7 +15,7 @@ Home|AyDEV
 
     {% for todo in todoList %}
     <div class='todo'>
-        <a href="{% url 'detail' todo.id %}"><div class="title">{{todo.title}}</div></a>
+        <a href="{% url 'sampleapp:detail' todo.id %}"><div class="title">{{todo.title}}</div></a>
         <div class="des">{{todo.des}}</div>
     </div>
     {% endfor %}
