@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Todo, assignee
+from django.contrib.staticfiles.templatetags.staticfiles import static
+from sklearn.externals import joblib
+from django.conf import settings
 
 def index(request):
     if request.method == 'POST':
@@ -64,9 +67,9 @@ def mlrocks(request):
 
         predict = model.predict(X_test)
         if predict[0] == 0:
-        out = "Not Purchased"
+            out = "Not Purchased"
         else:
-        out = "Purchased"
+            out = "Purchased"
         return render(request, 'sampleapp/ml.html', {'out': out})
 
     return render(request, 'sampleapp/ml.html')
