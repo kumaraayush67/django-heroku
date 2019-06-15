@@ -123,3 +123,11 @@
    - To load the model 
    
     model = joblib.load("file_name")
+    
+   ## Providing Frontend styling to Your websites
+   
+   - You can use libraries like bootstarp, materializecss etc
+   
+   https://getbootstrap.com/
+   
+   https://materializecss.com/
