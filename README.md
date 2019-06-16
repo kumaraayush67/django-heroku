@@ -131,3 +131,13 @@
    https://getbootstrap.com/
    
    https://materializecss.com/
+   
+   ## Links for official documentation
+   
+   - Django Web Framework
+   
+    https://www.djangoproject.com/
+    
+   - Django Rest Framework
+   
+    https://www.django-rest-framework.org/
